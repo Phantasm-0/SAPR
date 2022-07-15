@@ -38,6 +38,9 @@
     <Reference Include="DocumentFormat.OpenXml, Version=2.14.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.14.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -58,11 +61,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DiagramWindow.xaml.cs">
+      <DependentUpon>DiagramWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DrawSrc\DiagramDraw.cs" />
     <Compile Include="DrawSrc\Draw.cs" />
-    <Compile Include="RodSrc\DoublePositiveNumRule.cs" />
+    <Compile Include="PostProcessor\CharsTable.cs" />
+    <Compile Include="PostProcessor\ItemBackground.cs" />
+    <Compile Include="Processor\Characteristics.cs" />
+    <Compile Include="Processor\SAPR_Processor.cs" />
+    <Compile Include="Processor\Gauss_Jordan_Method.cs" />
+    <Compile Include="RodSrc\Bases.cs" />
+    <Compile Include="RodSrc\Construction.cs" />
+    <Compile Include="RodSrc\Rules\DoublePositiveNumRule.cs" />
+    <Compile Include="RodSrc\Rules\DoubleRule.cs" />
+    <Compile Include="RodSrc\Rules\DoubleAndFirstNodeCheckRule.cs" />
     <Compile Include="RodSrc\RodManager.cs" />
     <Compile Include="RodSrc\Rod.cs" />
+    <Compile Include="RodSrc\Rules\PosIntRule.cs" />
     <Compile Include="RodSrc\ScrollElement.cs" />
+    <Compile Include="Utility\ErrorCheck.cs" />
+    <Page Include="DiagramWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -105,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="imgSrc\" />
+    <Folder Include="Saves\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

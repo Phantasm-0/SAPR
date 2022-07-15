@@ -1,0 +1,1 @@
+{"LeftBase":false,"RightBase":true,"allowStraining":0.0,"Rods":[{"Number":1.0,"Area":0.0,"Elastic":0.0,"Length":0.0,"FirstNode":0.0,"LastNode":0.0,"LinearStraining":0.0}]}

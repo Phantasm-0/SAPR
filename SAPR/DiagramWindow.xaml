@@ -1,0 +1,43 @@
+﻿<Window x:Class="SAPR.DiagramWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SAPR.PostProcessor"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Closing="Window_Closing"
+        Title="DiagramWindow" Height="450" Width="800">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "0.1*" ></RowDefinition>
+            <RowDefinition Height = "1*" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+            <ColumnDefinition Width="0.05*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="Nx" Background="Red" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Checked="Nx_Checked" Unchecked = "Nx_Unchecked" IsChecked="True"></CheckBox>
+        <TextBlock Text="Nx" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20"></TextBlock>
+
+        <CheckBox x:Name="Ux" Background="Green" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsChecked="True" Checked= "Ux_Checked" Unchecked="Ux_Unchecked" ></CheckBox>
+        <TextBlock Text="Ux" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20"></TextBlock>
+
+        <CheckBox x:Name="Normal" Background="Blue" Grid.Column="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsChecked="True" Checked= "Normal_Checked" Unchecked="Normal_Unchecked" ></CheckBox>
+        <TextBlock Text="σ" Grid.Column="6" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="20"></TextBlock>
+        
+        <DataGrid x:Name="CharsTable" Loaded="CharsTable_Loaded" Grid.Row="0" Grid.RowSpan="2">
+        </DataGrid>
+        <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Visible" Grid.Row="1" Grid.ColumnSpan="6">
+            <Canvas x:Name="Diagrams" Background="White" ScrollViewer.CanContentScroll="True" Height="1000" Width=" 1000" ></Canvas>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

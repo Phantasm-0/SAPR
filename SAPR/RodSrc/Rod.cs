@@ -11,7 +11,7 @@ namespace SAPR.RodSrc
     class Rod : INotifyPropertyChanged
     {
 
-        public Rod (double number, double area, double length, double elastic, double firstnode, double lastnode)
+        public Rod (int number, double area, double length, double elastic,double linearstraining, double firstnode, double lastnode)
         {
             Number = number;
             Area = area;
@@ -19,16 +19,17 @@ namespace SAPR.RodSrc
             Elastic = elastic;
             FirstNode = firstnode;
             LastNode = lastnode;
+            LinearStraining = linearstraining;
         }
-        double _Number;
+        int _Number;
         double _Area;
         double _Length;
         double _Elastic;
-        double _LinearLoad;
+        double _LinearStraining;
         double _FirstNode;
         double _LastNode;
 
-        public double Number
+        public int Number
         {
             get
             {
@@ -105,18 +106,18 @@ namespace SAPR.RodSrc
                 NotifyPropertyChanged("LastNode");
             }
         }
-        public double LinearLoad
+        public double LinearStraining
 
         {
             get
             {
-                return _LinearLoad
+                return _LinearStraining
 ;
             }
             set
-            {   
+            {
 
-                _LinearLoad = value;
+                _LinearStraining = value;
                 NotifyPropertyChanged("LinearLoad");
             }
         }
